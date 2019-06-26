@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户查询</title>
+    <!--引入angularjs-->
+    <script src="js/angularjs/angular.min.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/service/userService.js"></script>
+    <script src="js/controller/userController.js"></script>
+</head>
+
+<body ng-app="demo" ng-controller="userController">
+<!--查询所有用户信息-->
+<input type="button" ng-click="findList()" value="查询所有用户信息">
+<table >
+    <tr>
+        <th>编号</th>
+        <th>用户名</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>出生日期</th>
+        <th>创建时间</th>
+        <th>更新时间</th>
+    </tr>
+    <!--遍历集合-->
+    <tr ng-repeat="entity in list">
+        <td>{{entity.id}}</td>
+        <td>{{entity.userName}}</td>
+        <td>{{entity.password}}</td>
+        <td>{{entity.age}}</td>
+        <td>{{entity.sex}}</td>
+        <td>{{entity.birthday}}</td>
+        <td>{{entity.created}}</td>
+        <td>{{entity.updated}}</td>
+    </tr>
+
+</table>
+<hr>
+<!--根据用户名查询用户信息-->
+请输入用户名：<input ng-model="username">
+<input type="button" ng-click="findUser(username)" value="查询">
+<table  >
+    <tr>
+        <th>编号</th>
+        <th>用户名</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>出生日期</th>
+        <th>创建时间</th>
+        <th>更新时间</th>
+    </tr>
+    <tr>
+        <td>{{entity.id}}</td>
+        <td>{{entity.userName}}</td>
+        <td>{{entity.password}}</td>
+        <td>{{entity.age}}</td>
+        <td>{{entity.sex}}</td>
+        <td>{{entity.birthday}}</td>
+        <td>{{entity.created}}</td>
+        <td>{{entity.updated}}</td>
+    </tr>
+</table>
+<hr>
+<!--根据年龄段查询用户信息-->
+年龄：从<input ng-model="start">到<input ng-model="end">
+<input type="button" ng-click="findUsersByAge(start,end)" value="查询">
+<table >
+    <tr>
+        <th>编号</th>
+        <th>用户名</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>出生日期</th>
+        <th>创建时间</th>
+        <th>更新时间</th>
+    </tr>
+    <!--遍历集合-->
+    <tr ng-repeat="entity in users">
+        <td>{{entity.id}}</td>
+        <td>{{entity.userName}}</td>
+        <td>{{entity.password}}</td>
+        <td>{{entity.age}}</td>
+        <td>{{entity.sex}}</td>
+        <td>{{entity.birthday}}</td>
+        <td>{{entity.created}}</td>
+        <td>{{entity.updated}}</td>
+    </tr>
+</table>
+</body>
+</html>
