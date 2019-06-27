@@ -8,9 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="generatorSqlmap" />
         <module name="demo-pojo" />
-        <module name="demo-user-service" />
-        <module name="demo-user-interface" />
         <module name="demo-dao" />
+        <module name="demo-user-interface" />
+        <module name="demo-user-service" />
         <module name="demo-user-web" />
       </profile>
     </annotationProcessing>
